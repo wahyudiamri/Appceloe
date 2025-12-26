@@ -5,6 +5,8 @@ import 'package:appceloe/widgets/upcoming_assignment_card.dart';
 import 'package:appceloe/widgets/announcement_banner.dart';
 import 'package:appceloe/widgets/course_progress_item.dart';
 import 'package:appceloe/screens/my_classes_screen.dart';
+import 'package:appceloe/screens/notification_screen.dart';
+import 'package:appceloe/models/notification_item.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -75,6 +77,18 @@ class _HomeScreenState extends State<HomeScreen> {
     deadline: '10:59 PM',
   );
 
+  final List<NotificationItem> notifications = [
+    NotificationItem(
+      title: 'Tugas 01 (UI/UX) mendekati tenggat',
+      message: 'Sisa waktu: 1 hari',
+      isUrgent: true,
+    ),
+    NotificationItem(
+      title: 'Pengumuman: Info Maintenance Server',
+      message: 'Silakan cek detail pada halaman beranda.',
+    ),
+  ];
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -130,8 +144,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       // Tab 1: My Classes Content
       MyClassesScreen(courses: courses),
-      // Tab 2: Notifications (Placeholder)
-      const Center(child: Text('Notifikasi Screen Placeholder')),
+      // Tab 2: Notifications
+      NotificationScreen(notifications: notifications),
     ];
 
     // Dynamic Title based on selection
