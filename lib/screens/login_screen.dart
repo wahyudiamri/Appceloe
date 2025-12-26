@@ -37,8 +37,13 @@ class _LoginScreenState extends State<LoginScreen> {
                      Container(
                        height: 200,
                        width: double.infinity,
-                       color: Colors.grey[300], // Placeholder color
-                        child: const Center(child: Text("University Building Image")),
+                       decoration: const BoxDecoration(
+                         borderRadius: BorderRadius.all(Radius.circular(20)),
+                         image: DecorationImage(
+                            image: AssetImage('assets/images/uim_logo.png'),
+                            fit: BoxFit.cover,
+                         ),
+                       ),
                      ),
                     Transform.translate(
                       offset: const Offset(0, 30),
