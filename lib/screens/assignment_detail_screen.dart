@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:appceloe/models/course_assignment.dart';
 import 'package:appceloe/utils/theme.dart';
+import 'package:appceloe/screens/quiz_screen.dart';
 
 class AssignmentDetailScreen extends StatelessWidget {
   final CourseAssignment assignment;
@@ -85,10 +86,16 @@ class AssignmentDetailScreen extends StatelessWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: isEnabled ? () {
-                  // Placeholder for action
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Aksi ${buttonText} berhasil!')),
-                  );
+                  if (assignment.type == AssignmentType.quiz) {
+                     Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const QuizScreen()),
+                    );
+                  } else {
+                     ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Aksi ${buttonText} berhasil!')),
+                    );
+                  }
                 } : null,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: CeloeTheme.primaryColor,

@@ -178,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text(
-                  'Dandy Candra Pratama',
+                  'Wahyudi Amri',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,

@@ -40,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             const Text(
-              'Dandy Candra Pratama',
+              'Wahyudi Amri',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -57,10 +57,10 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: 30),
             
             // Info Cards
-            _buildInfoCard(Icons.email, 'Email', 'dandy@telkomuniversity.ac.id'),
-            _buildInfoCard(Icons.badge, 'NIM', '120219xxxx'),
-            _buildInfoCard(Icons.school, 'Program Studi', 'D3 Teknologi Telekomunikasi'),
-            _buildInfoCard(Icons.apartment, 'Fakultas', 'Fakultas Ilmu Terapan'),
+            _buildInfoCard(Icons.email, 'Email', 'wahyudi@telkomuniversity.ac.id'),
+            _buildInfoCard(Icons.badge, 'NIM', '130119xxxx'),
+            _buildInfoCard(Icons.school, 'Program Studi', 'S1 Teknik Informatika'),
+            _buildInfoCard(Icons.apartment, 'Fakultas', 'Informatika'),
 
             const SizedBox(height: 40),
             
