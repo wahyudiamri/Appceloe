@@ -7,6 +7,7 @@ import 'package:appceloe/widgets/course_progress_item.dart';
 import 'package:appceloe/screens/my_classes_screen.dart';
 import 'package:appceloe/screens/notification_screen.dart';
 import 'package:appceloe/models/notification_item.dart';
+import 'package:appceloe/screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -159,7 +160,14 @@ class _HomeScreenState extends State<HomeScreen> {
     // Dynamic Title based on selection
     Widget _appBarTitle;
     if (_selectedIndex == 0) {
-      _appBarTitle = Row(
+      _appBarTitle = GestureDetector(
+        onTap: () {
+           Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ProfileScreen()),
+          );
+        },
+        child: Row(
           children: [
             const CircleAvatar(
               backgroundColor: CeloeTheme.primaryColor,
@@ -187,7 +195,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ],
-        );
+        ),
+      );
     } else if (_selectedIndex == 1) {
       _appBarTitle = const Text(
           'Kelas Saya',
