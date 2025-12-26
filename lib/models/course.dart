@@ -4,6 +4,7 @@ class Course {
   final String semester; // e.g. 2021/2
   final String lecturers; // e.g. [ARS]
   final double progress; // 0.0 to 1.0
+  final String imagePath; // Path to asset image
 
   Course({
     required this.name,
@@ -11,6 +12,7 @@ class Course {
     required this.semester,
     required this.lecturers,
     required this.progress,
+    required this.imagePath,
   });
 }
 

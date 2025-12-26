@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:appceloe/models/course.dart';
 
+import 'package:appceloe/screens/course_detail_screen.dart';
+
 class ClassItemCard extends StatelessWidget {
   final Course course;
 
@@ -8,38 +10,45 @@ class ClassItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 15),
-      padding: const EdgeInsets.all(15),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(color: Colors.grey.withOpacity(0.2)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.05),
-            spreadRadius: 1,
-            blurRadius: 5,
-            offset: const Offset(0, 2),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CourseDetailScreen(course: course),
           ),
-        ],
-      ),
-      child: Row(
+        );
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 15),
+        padding: const EdgeInsets.all(15),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+          border: Border.all(color: Colors.grey.withOpacity(0.2)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.05),
+              spreadRadius: 1,
+              blurRadius: 5,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Row(
         children: [
           // Thumbnail placeholder based on screenshot (small square image)
           Container(
             width: 60,
-            height: 60,
+            height: 80, // Taller to match book cover aspect ratio
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(5),
               color: Colors.grey[200],
-              image: const DecorationImage(
-                 // Placeholder image - ideally utilize asset or network image
-                 image: NetworkImage('https://via.placeholder.com/60'),
+              image: DecorationImage(
+                 image: AssetImage(course.imagePath),
                  fit: BoxFit.cover,
               )
             ),
-             child: const Icon(Icons.image, color: Colors.grey),
           ),
           const SizedBox(width: 15),
           Expanded(
@@ -70,6 +79,7 @@ class ClassItemCard extends StatelessWidget {
           const Icon(Icons.chevron_right, color: Colors.grey),
         ],
       ),
+     ),
     );
   }
 }

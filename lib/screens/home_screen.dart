@@ -25,49 +25,57 @@ class _HomeScreenState extends State<HomeScreen> {
       code: 'D4SM-41-GABI',
       semester: '2021/2',
       lecturers: '[ARS]',
-      progress: 0.2
+      progress: 0.2,
+      imagePath: 'assets/images/bahasa_inggris.png',
     ),
     Course(
       name: 'Desain Antarmuka & Pengalaman Pengguna',
       code: 'D4SM-42-03',
       semester: '2021/2',
       lecturers: '[ADY]',
-      progress: 1.0
+      progress: 1.0,
+      imagePath: 'assets/images/ui_ux.png',
     ),
     Course(
       name: 'Kewarganegaraan',
       code: 'D4SM-41-GABI',
       semester: '2021/2',
       lecturers: '[BBO], Jumat 2',
-      progress: 0.8
+      progress: 0.8,
+      imagePath: 'assets/images/pkn.png',
     ),
     Course(
       name: 'Olah Raga',
       code: 'D3TT-44-02',
       semester: '2021/2',
       lecturers: '[EYR]',
-      progress: 0.0
+      progress: 0.0,
+      imagePath: 'assets/images/olahraga.png',
     ),
     Course(
       name: 'Pemrograman Multimedia Interaktif',
       code: 'D4SM-43-04',
       semester: '2021/2',
       lecturers: '[TPR]',
-      progress: 0.1
+      progress: 0.1,
+      imagePath: 'assets/images/multimedia.png',
     ),
     Course(
       name: 'Pemrograman Perangkat Bergerak Multimedia',
       code: 'D4SM-41-GABI',
       semester: '2021/2',
       lecturers: '[APJ]',
-      progress: 0.4
+      progress: 0.4,
+      imagePath: 'assets/images/mobile_programming.png',
     ),
     Course(
       name: 'Sistem Operasi',
       code: 'D4SM-44-02',
       semester: '2021/2',
       lecturers: '[DDS]',
-      progress: 0.6
+      progress: 0.6,
+      // Fallback/Generic or Reuse one if not provided, using multimedia or UIUX as placeholder
+      imagePath: 'assets/images/os.png', 
     ),
   ];
 
